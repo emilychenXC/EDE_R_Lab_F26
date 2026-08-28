@@ -22,22 +22,33 @@ Enter answers to the questions just below the >Answer: prompt.
 
 1. What are your previous experiences with data analytics, R, and Git? Include both formal and informal training.
 
-> Answer: 
+> Answer: For data analytics, I have experience with Google Sheets formulas 
+and Tableau, which I used to analyze and visualize data in my undergraduate 
+research lab. I learned R for spatial analysis in the spring of my senior year, 
+where I independently worked on a project examining the relationship between 
+urban infrastructure and road noise in Boston, MA. I also learned Python in 
+an undergraduate computer science course. Last but not least, I learned some 
+basic ArcGIS and QGIS applications in an urban planning course.
 
 2. Are there any components of the course about which you feel confident?
 
-> Answer: 
+> Answer: I feel confident in my foundational knowledge of RStudio and writing 
+basic R code. I know how to navigate the RStudio environment, write functions, 
+and work with packages for data manipulation and analysis.
 
 3. Are there any components of the course about which you feel apprehensive?
 
-> Answer: 
-
+> Answer: I have never used a web-based RStudio 'container' before, 
+and it feels a little different from RStudio on a personal machine. 
+Also, I feel apprehensive about the connection between RStudio and GitHub, 
+particularly actions like pulling, committing, and pushing to a GitHub account 
+and storing files in a remote GitHub repository.
 
 ## 2) GitHub
 
 Go over Tasks 1.1. through 1.6 on Course Setup page. Provide a link below to your forked course repository in GitHub. Make sure you have pulled all recent changes from the course repository and that you have updated your course README file, committed those changes, and pushed them to your GitHub account. 
 
-> Answer: 
+> Answer: https://github.com/emilychenXC/EDE_R_Lab_F26.git
 
 ## 3) Knitting
 When you have completed this document, click the `knit` button.This should produce a PDF copy of your markdown document. Submit this PDF to Canvas 
