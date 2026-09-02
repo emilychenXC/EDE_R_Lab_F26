@@ -40,10 +40,10 @@ A numbered list is useful when sequence matters:
 
 A bulleted list is useful when order does not matter:
 
-- data
-- code
-- figures
-- tables
+-   data
+-   code
+-   figures
+-   tables
 
 # R code chunks
 
@@ -55,7 +55,6 @@ The chunk below performs a simple calculation.
 5 + 2 * 3
 ```
 
-
 Try changing the expression and running the chunk again.
 
 # Code, results, and narrative together
@@ -65,7 +64,7 @@ One advantage of R Markdown is that the explanation and the analysis can remain 
 Suppose we have five environmental temperature observations:
 
 ```{r temperature-data}
-temperature <- c(18, 20, 19, 22, 21)
+temperature <- c(24, 20, 19, 22, 21)
 temperature
 ```
 
@@ -75,7 +74,13 @@ We can calculate their mean using R:
 mean(temperature)
 ```
 
+# Play around with code chunk
 Because the calculation is part of the document, it can be reproduced whenever the document is run again.
+
+*Calculate* their **sum** using R:
+```{r}
+sum(temperature)
+```
 
 # Inline R code
 
