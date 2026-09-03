@@ -56,6 +56,8 @@ Create a new R Markdown document and:
 6.  Add several Markdown headings (`#`, `##`, `###`).
 7.  Knit again and observe how the headings are used to build the table of contents.
 
+
+
 The key idea is that **YAML controls properties of the entire document**. We do not manually type a table of contents; R Markdown can generate it from the document structure.
 
 For additional options, consult the R Markdown documentation and cheat sheets available through RStudio's Help menu.
