@@ -1,6 +1,6 @@
 ---
 title: "Assignment 2: Coding Basics"
-author: "Student Name"
+author: "Emily Chen"
 output: pdf_document
 geometry: margin=2.54cm
 editor_options: 
@@ -20,13 +20,21 @@ This exercise accompanies the lessons/labs in Environmental Data Explorations on
 5.  When you have completed the assignment, **Knit** the text and code into a single PDF file.
 6.  After Knitting, submit the completed exercise (PDF file) to Canvas.
 
+##Table of Contents
+
+*Add a table of contents*
+
+```{=latex}
+\tableofcontents
+```
+
 ## Crafting Reports - Part 1
 
 ### Import packages and data, suppressing messages
 
 Set the following R code chunk so that it runs when knit, but no messages, errors, or any output is shown. The code itself, however, should be displayed.
 
-```{r project.setup}
+```{r project.setup, results='hide', warning = FALSE, message = FALSE, echo = TRUE}
 #Import libraries
 library(tidyverse)
 library(knitr)
@@ -47,9 +55,20 @@ library(knitr)
 ```{r basics 1}
 #1. 
 
+five_sequence <- seq(from = 1, to = 55, by = 5) #create the sequence
+
 #2. 
 
+mean(five_sequence) #compute the mean of this sequence
+median(five_sequence) #compute the median of this sequence
+
 #3. 
+
+five_determine <- if (mean(five_sequence) > median(five_sequence)) 
+{'the mean is greater than the median'} else 
+    {'the mean is equal or less than the median'} 
+
+#create an if-else statement that compare the mean and the median of the sequence.          Since the question only asks the R to determine whether the mean is greater than             the median, therefore I create the statement to categorize the equal and less                   circumstance together.
 
 ```
 
@@ -65,12 +84,20 @@ library(knitr)
 
 ```{r basics 2}
 
+student_name <- c("Alice", "Betty", "Cindy", "Daisy") #character data
+student_test <- c(90,85,70,88) #numeric data
+student_scholarship <- c(TRUE, FALSE, FALSE, TRUE) #Logical Data
 
+Student_records <- data.frame(Name=student_name, Test_Score=student_test, 
+                              Scholarship=student_scholarship) 
+#create the data frame while label the columns with informative titles
 ```
 
 9.  QUESTION: How is this data frame different from a matrix?
 
 > Answer:
+
+A matrix is a two dimensional structure that can only contain one type of elements. While a data frame is also a two dimensional structure, it can contain multiple types of elements across different columns.
 
 10. Create a function with one input. In this function, use `if`...`else` to evaluate the value of the input: if it is greater than 50, print the word "Pass"; otherwise print the word "Fail". 
 
@@ -83,20 +110,28 @@ library(knitr)
 ```{r basics 3}
 #10. Create a function using if...else
 
+test_a <-function(x) {if (x > 50) {"Pass" } else {"Fail"}}
+
 #11. Create a function using ifelse()
 
+test_b <- function(x) {ifelse(x > 50, "Pass", "Fail")}
+
 #12a. Run the first function with the value 52.5
-
+test_a (52.5)
 #12b. Run the second function with the value 52.5
-
+test_b (52.5)
 #13a. Run the first function with the vector of test scores
+  
+#test_a(student_test) comments out because this doesn't work
 
 #13b. Run the second function with the vector of test scores
+test_b(student_test)
 ```
 
 14. QUESTION: Which option of `if`...`else` vs. `ifelse` worked? Why? (Hint: search the web for "R vectorization")
 
 > Answer:
+ifelse() worked. According to the search result on web, 'if'...'else' is not vectorized, which means this function cannot operate on vectors or datasets at once and can only evaluate the first element of the vector. 'ifelse' is vectorized and it can operate element-by-element across an entire vector, returning a vector of the same length.
 
 
 ## Crafting reports - Part 4
@@ -108,6 +143,6 @@ Add a table of contents to your document and knit to a PDF. Submit your PDF to C
 ### Github link
 
 > Answer:
-
+https://github.com/emilychenXC/EDE_R_Lab_F26.git
 
 **NOTE** Before knitting, you'll need to comment out the call to the function in Q13 that does not work. (A document can't knit if the code it contains causes an error!)
