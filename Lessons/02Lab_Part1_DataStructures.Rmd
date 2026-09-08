@@ -38,10 +38,10 @@ vector1 <- c(1,2,5.3,6,-2,4) # Vector type: Numeric
 vector1
 class(vector1)
 
-vector2 <- c("one","two","three") # Vector type: 
+vector2 <- c("one","two","three") # Vector type: Character
 vector2
 
-vector3 <- c(TRUE,TRUE,TRUE,FALSE,TRUE,FALSE) # Vector type:
+vector3 <- c(TRUE,TRUE,TRUE,FALSE,TRUE,FALSE) # Vector type: Logical
 vector3
 ```
 
@@ -52,25 +52,25 @@ Add comments below to indicate what each operation does.(First answer is provide
 # Returns the 3rd item in the vector
 vector1[3]
 
-#
+# Return the largest number in the vector
 max(vector1)
 
 #Create another vector of the values 10 thru 15
 vector4 <- c(10:15)
 
-#
+#Combine vector1 and vector4 together
 c(vector1, vector4)
 
-#
+# Multiply each number in the vector1 and vector 4 together
 vector1 * vector4
 
-#
+# Multiply each number in the vector with 10
 vector1 * 10
 
-#
+# Uppercase all the letter in the character in the vector
 toupper(vector2) 
 
-#
+# Reverse the logic in the vector
 !vector3
 
 ```
@@ -82,16 +82,18 @@ Find a 5-day forecast of temperatures (Fahrenheit) for Durham, North Carolina. C
 ```{r Vector Exercise}
 
 #Assign to the variable 'temps_F' a vector of high temperatures in F
-
+temps_F <- c(98, 94, 83, 83, 86)
 
 #What is the average of these temperatures 
-
+average <-mean(temps_F)
+average
 
 #Compute the difference between each temperature and the average calculated above
-
+temps_F - average
 
 #Subtract 32 and multiply by 5/9ths to create a vector in Celsius
-
+temps_C <- (temps_F-32)*5/9
+temps_C
 
 ```
 
@@ -102,11 +104,11 @@ Complete the comments below:
 # Matrices ----
 matrix1 <- matrix(1:20, nrow = 5,ncol = 4) # 
 matrix1
-#matrix1 has __ rows and __ columns
+#matrix1 has _5_ rows and _4_ columns
 
 matrix2 <- matrix(1:20, nrow = 5, ncol = 4, byrow = TRUE) #
 matrix2
-#matrix2 has __ rows and __ columns
+#matrix2 has _5_ rows and _4_ columns
 
 matrix3 <- matrix(
   data = 1:20, 
@@ -162,7 +164,8 @@ matrix4['R2','C1']
 ### Exercise 1b: Matrices
 Compute the mean of column "C2" in matrix4. (Should be 14.5)
 ```{r Matrix Exercise}
-
+avg <-mean(matrix4[, 'C2'])
+avg
 ```
 
 
