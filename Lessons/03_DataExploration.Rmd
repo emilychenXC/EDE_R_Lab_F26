@@ -130,7 +130,7 @@ Commons functions to import datasets and store as data frames are *read.table()*
 # site_no looks numeric but is really an ID with a leading zero, so we keep it
 # as character to protect that zero.
 USGS.flow.data <- read.csv(
-  file = here("Data/Raw/USGS_Site02085000_Flow_raw.csv"),
+  file = here("Data/Raw/USGS_Site02085000_Flow_Raw.csv"),
   colClasses = c("site_no" = "character")
 )
 
@@ -273,7 +273,7 @@ summary(USGS.flow.data$discharge.min)   # note the NA's count at the end
 summary(USGS.flow.data$discharge.max)    # inspect the max for suspicious spikes
 
 # Any exact duplicate rows?
- 
+sum(duplicated(USGS.flow.data))
 
 # Do the categorical columns hold clean, expected categories?
 unique(USGS.flow.data$agency_cd)                 # should be one agency
@@ -329,7 +329,7 @@ Note: each of these approaches utilize the package "ggplot2". We will be coverin
 Visualize count data for categorical variables. 
 
 
-```{r diagnostic-plots, fig.height=3, fig.width=4, warning=FALSE}
+```{r diagnostic-plots, fig.height = 3, fig.width = 4, warning = FALSE}
 # 1. CATEGORICAL — a bar chart of the discharge approval codes
 ggplot(USGS.flow.data, aes(x = discharge.mean.approval)) +
   geom_bar()
