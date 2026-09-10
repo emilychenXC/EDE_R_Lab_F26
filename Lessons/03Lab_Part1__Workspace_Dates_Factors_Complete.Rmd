@@ -52,11 +52,11 @@ here()
 setwd(here())
 
 #Arguments in the `here()` command allow easy navigation within subfolders
-filename <- here('Data','Raw','USGS_Site02085000_Flow_Raw.csv')
+filename <- here('Data','Raw','USGS_Site02085000_Flow_raw.csv')
 print(filename)
 
 #Or
-filename <- here("Data/Raw/USGS_Site02085000_Flow_Raw.csv")
+filename <- here("Data/Raw/USGS_Site02085000_Flow_raw.csv")
 print(filename)
 
 #See whether the file exists
@@ -64,7 +64,7 @@ file.exists(filename)
 
 #A tidied read.csv command
 usgs_flow_data <- read.csv(
-  file = here('Data','Raw','USGS_Site02085000_Flow_Raw.csv')
+  file = here('Data','Raw','USGS_Site02085000_Flow_raw.csv')
 )
 
 #Create and print a list of all files in a folder using "dir" and "here"
